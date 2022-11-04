@@ -11,8 +11,8 @@
     <Copyright>Copyright © na1307 2022</Copyright>
     <Description>Nullable attributes</Description>
     <AssemblyVersion>1</AssemblyVersion>
-    <FileVersion>1.0.1</FileVersion>
-    <Version>1.0.1</Version>
+    <FileVersion>1.0.2</FileVersion>
+    <Version>1.0.2</Version>
     <PackageProjectUrl>https://na1307.github.io/$(AssemblyName)</PackageProjectUrl>
     <PackageTags>nullable;na1307;bluehill</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -29,6 +29,11 @@
     <Using Remove="System.Linq" />
     <Using Remove="System.Net.Http" />
     <Using Remove="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'net5.0'">
+    <AssemblyAttribute Include="System.CLSCompliantAttribute">
+      <_Parameter1>true</_Parameter1>
+    </AssemblyAttribute>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md">
